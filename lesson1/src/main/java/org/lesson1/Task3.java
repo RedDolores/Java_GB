@@ -40,6 +40,7 @@ public class Task3 {
                     System.out.println(a * b);
                     break;
                 case "/":
+                    if (b == 0) throw new ArithmeticException();
                     System.out.println(a / b);
                     break;
             }
