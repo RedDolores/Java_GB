@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task3 {
-    public static double getDoubleNum() {
+    private static double getDoubleNum() {
         Scanner scanner = new Scanner(System.in);
         String enter = scanner.next();
         return Double.parseDouble(enter);
