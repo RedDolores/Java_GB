@@ -27,6 +27,7 @@ public class Task1 {
 
     private String[] getItemsJson(StringBuilder builder) {
 
+
         builder.deleteCharAt(0);
         builder.deleteCharAt(builder.length() - 1);
         String items = convertToString(builder);
@@ -70,7 +71,7 @@ public class Task1 {
                         + " AND ");
             }
             builder.delete(builder.length() - 5, builder.length());
-            System.out.println(builder);
+            logger.log(Level.INFO, String.valueOf(builder));
 
 
         } catch (ParseException e) {

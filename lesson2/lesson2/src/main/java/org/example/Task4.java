@@ -17,8 +17,8 @@ public class Task4 {
     public void calculator() {
         String[] op = new String[]{"+", "-", "*", "/", "0"};
         try {
-            System.out.print("Введите операцию (+ , - , * , /): " +
-                    "или 0 для выхода. ");
+            logger.log(Level.INFO,"Введите операцию (+ , - , * , /) " +
+                    "или 0 для выхода: ");
             Scanner scanner = new Scanner(System.in);
             String operator = scanner.next();
 
@@ -27,39 +27,45 @@ public class Task4 {
             else if (operator.equals("0")) {
                 return;
             }
-            System.out.print("Введите число a: ");
+            logger.log(Level.INFO,"Введите число a: ");
             double a = getDoubleNum();
-            System.out.print("Введите число b: ");
+            logger.log(Level.INFO,"Введите число b: ");
             double b = getDoubleNum();
 
             switch (operator) {
                 case "+":
-                    System.out.println(a + b);
+                    logger.log(Level.INFO, "Result: " +
+                            String.valueOf(a + b));
                     break;
                 case "-":
-                    System.out.println(a - b);
+                    logger.log(Level.INFO, "Result: " +
+                            String.valueOf(a - b));
                     break;
                 case "*":
-                    System.out.println(a * b);
+                    logger.log(Level.INFO, "Result: " +
+                            String.valueOf(a * b));
                     break;
                 case "/":
                     if (b == 0) throw new ArithmeticException();
-                    System.out.println(a / b);
+                    logger.log(Level.INFO, "Result: " +
+                            String.valueOf(a / b));
                     break;
             }
-            logger.log(Level.INFO, "Пользователь ввел operator: "
-                    + operator);
-            logger.log(Level.INFO, "Пользователь ввел a: " + a);
-            logger.log(Level.INFO, "Пользователь ввел b: " + b);
+//            logger.log(Level.INFO, "Пользователь ввел operator: "
+//                    + operator);
+//            logger.log(Level.INFO, "Пользователь ввел a: " + a);
+//            logger.log(Level.INFO, "Пользователь ввел b: " + b);
 
         } catch (NumberFormatException ex) {
-            System.out.println("На вход ожидалось число. Повторите попытку.");
+            logger.log(Level.INFO, "На вход ожидалось число. " +
+                    "Повторите попытку.");
             calculator();
         } catch (ArithmeticException ex) {
-            System.out.println("Деление на 0 запрещено. Повторите попытку.");
+            logger.log(Level.INFO, "Деление на 0 запрещено. " +
+                    "Повторите попытку.");
             calculator();
         } catch (Exception ex) {
-            System.out.println("Оператор введен некорректно. " +
+            logger.log(Level.INFO, "Оператор введен некорректно. " +
                     "Повторите попытку.");
             calculator();
 

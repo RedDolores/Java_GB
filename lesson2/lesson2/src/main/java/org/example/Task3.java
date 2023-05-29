@@ -48,7 +48,7 @@ public class Task3 {
                 builder.append("Студент " + innerObj.get("фамилия") +
                         " получил " + innerObj.get("оценка") + " по предмету " +
                         innerObj.get("предмет"));
-                System.out.println(builder);
+                logger.log(Level.INFO, String.valueOf(builder));
                 builder.setLength(0);
             }
 
@@ -68,9 +68,7 @@ public class Task3 {
         try {
             // считывание файла JSON
             FileReader reader = new FileReader(path);
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
-
-            JSONArray students = (JSONArray) jsonObject.get("");
+            JSONArray students = (JSONArray) jsonParser.parse(reader);
 
             Iterator i = students.iterator();
 
@@ -79,7 +77,7 @@ public class Task3 {
                 builder.append("Студент " + innerObj.get("фамилия") +
                         " получил " + innerObj.get("оценка") + " по предмету " +
                         innerObj.get("предмет"));
-                System.out.println(builder);
+                logger.log(Level.INFO, String.valueOf(builder));
                 builder.setLength(0);
             }
 
