@@ -59,12 +59,9 @@ public class Task {
 
     public void getAverage(List<Integer> ints) {
 
-        if (ints == null || ints.size() == 0) {
-            System.out.println("List is empty.");
-        } else {
-            System.out.println(ints.stream().mapToInt(a -> a)
-                    .average().orElse(0));
-        }
+        System.out.println(ints.stream().mapToInt(a -> a)
+                .average().orElse(0));
+
     }
 
 }
